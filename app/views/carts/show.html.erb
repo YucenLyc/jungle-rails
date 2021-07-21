@@ -4,6 +4,12 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.length == 0 %>
+  <div class ="alert alert-info" role="alert">
+      <p>Sorry, your cart is currently empty .<a href="/"><b>Click Here</b> to Continue Shopping.</p>
+  </div>
+
+  <% else %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +54,5 @@
       <% end %>
     </div>
   </div>
-
+  <% end %>
 </section>
