@@ -1,0 +1,14 @@
+<% product = Product.find(product_id) %>
+
+<p>Your purchase for <%=quantity%> of <%=product.name%>, and your payment amount is <%=humanized_money_with_symbol total_line_price / 100.0%>.</p>
+
+<tr>
+  <td>
+    <%= image_tag product.image.tiny %>
+  </td>
+  <td>
+    <h4><%= product.name %></h4>
+    <br>
+    <p><%= product.description %></p>
+  </td>
+</tr>
