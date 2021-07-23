@@ -4,29 +4,28 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-  end 
+  end
 
   def new
     @category = Category.new
-  end 
+  end
 
-  def create 
+  def create
     @category = Category.new(category_params)
 
-    if @category.save 
+    if @category.save
       redirect_to [:admin, :categories], notice: 'Category created!'
-    else 
-      render: new
-    end 
-  end 
+    else
+      render :new
+    end
+  end
 
-  private 
+  private
 
   def category_params
     params.require(:category).permit(
       :name
     )
-  end 
-  
-end 
+  end
 
+end
